@@ -40,9 +40,9 @@ def win(lWin):
     while(True):
         maybeQuit()
         pygame.draw.rect(screen, WHITE, Rect((0, 0), (L, L)))
-        bigger = pygame.font.SysFont(fontName, 950)
+        bigger = pygame.font.SysFont(fontName, 900)
         label3 = bigger.render(lWin, 1, DARKORCHID)
-        screen.blit(label3, (-15, -55))
+        screen.blit(label3, (-15, -180))
         pygame.display.update()
 def makeGrid(x, y, thick, side):
     pygame.draw.rect(screen, BLACK, Rect(((G), (B + G)),(((3 * B) + (2 * T)), T)))
@@ -112,10 +112,10 @@ while True:
             #print bigWin
             if bigWin[x][y] == 0:
                 label2 = big.render("O", 1, GREY)
-                screen.blit(label2, (posBoard[x][y][1][1][0] - 97, posBoard[x][y][1][1][1] - 110))
+                screen.blit(label2, (posBoard[x][y][1][1][0] - 97, posBoard[x][y][1][1][1] - 150))
             if bigWin[x][y] == 1:
                 label2 = big.render("X", 1, GREY)
-                screen.blit(label2, (posBoard[x][y][1][1][0] - 97, posBoard[x][y][1][1][1] - 110))
+                screen.blit(label2, (posBoard[x][y][1][1][0] - 97, posBoard[x][y][1][1][1] - 150))
     for row1 in range(0, 3):
         for col1 in range(0, 3):
             for row2 in range(0, 3):
@@ -138,10 +138,10 @@ while True:
                             pygame.draw.rect(screen, RED, Rect((x - B2 / 2 + 1, y - B2 / 2 + 1), (B2 + 1, B2 + 1)))
                     if board[row1][col1][row2][col2] == 0:
                         label = myfont.render("O", 1, BLACK)
-                        screen.blit(label, (x - 17, y - 17))
+                        screen.blit(label, (x - 17, y - 26))
                     if board[row1][col1][row2][col2] == 1:
                         label = myfont.render("X", 1, BLACK)
-                        screen.blit(label, (x - 17, y - 17))
+                        screen.blit(label, (x - 17, y - 26))
     if letter == 0:
         label = myfont.render("O", 1, BLACK)
     if letter == 1:
