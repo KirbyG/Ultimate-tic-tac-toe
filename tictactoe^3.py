@@ -1,5 +1,12 @@
 import pygame
+import sys
 from pygame.locals import *
+
+def maybeQuit():
+    for event in pygame.event.get():
+        if event.type == QUIT: ## defined in pygame.locals
+            pygame.quit()
+            sys.exit()
 
 fontName = "timesnewroman"
 
@@ -31,6 +38,7 @@ test[0] = 25
 print test'''
 def win(lWin):
     while(True):
+        maybeQuit()
         pygame.draw.rect(screen, WHITE, Rect((0, 0), (L, L)))
         bigger = pygame.font.SysFont(fontName, 950)
         label3 = bigger.render(lWin, 1, DARKORCHID)
@@ -86,6 +94,7 @@ letter = 0
 #pygame.mouse.set_visible(False)
 #print pygame.font.get_fonts()
 while True:
+    maybeQuit()
     #pygame.draw.rect(screen, WHITE, Rect((0, 0), (L, L)))
     for x in range (0, 3):
         for y in range (0, 3):
